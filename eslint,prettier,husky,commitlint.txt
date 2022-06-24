@@ -1,0 +1,28 @@
+npm install --save-dev --save-exact prettier
+echo {}> .prettierrc.json
+echo {}> .prettierignore
+npx prettier --write .
+npx prettier --check .
+
+npm install eslint --save-dev
+npm init @eslint/config
+
+npm install --save-dev @commitlint/config-conventional @commitlint/cli commitizen cz-conventional-changelog
+echo '{"extends": ["@commitlint/config-conventional"]}'> .commitlintrc.json
+npm set-script commit "git-cz"
+npx commitizen init cz-conventional-changelog --save-dev --save-exact
+
+
+npm install --save-dev husky lint-staged
+npx husky install
+npm set-script prepare "husky install"
+npx husky add .husky/pre-commit "npx lint-staged"
+npx husky add .husky/commit-msg 'npx --no -- commitlint --edit "$1"'
+#chmod a+x .husky/commit-msg
+
+# package.json
+{
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
+  }
+}
