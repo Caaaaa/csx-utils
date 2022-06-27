@@ -1,12 +1,31 @@
 {
   "compilerOptions": {
-    "target": "ES5",
-    "module": "CommonJS",
+    "target": "esnext",
+    "lib": [
+      "dom",
+      "esnext"
+    ],
+
+    "module": "esnext",
+    "removeComments": false,
     "declaration": true,
-    "outDir": "./lib",
     "strict": true,
-    "lib": ["ESNext"]
+    "noImplicitAny": false,
+    "importHelpers": true,
+
+    "baseUrl": "./",
+    "outDir": "./lib",
+    "paths": {
+      "@/*": [
+        "src/*"
+      ]
+    },
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+
+    "types": []
   },
-  "include": ["src"],
+  "include": ["src/*.ts"],
   "exclude": ["node_modules"]
 }
