@@ -6,9 +6,9 @@ import userAgent from "./userAgent";
  */
 export default function isMiniProgram() {
   const wnu = userAgent().toLowerCase();
-  // eslint-disable-next-line no-underscore-dangle
   return (
     /miniprogram/i.test(wnu) ||
+    // eslint-disable-next-line no-underscore-dangle
     (window as any).__wxjs_environment === "miniprogram"
   );
 }
