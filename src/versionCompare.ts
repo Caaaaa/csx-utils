@@ -9,7 +9,7 @@
  * }
  */
 export default function versionCompare(current?: string, target?: string) {
-  let result: number = 1;
+  let result = 1;
   if (current && target) {
     if (current === target) {
       result = 1;
