@@ -10,12 +10,14 @@
  */
 export default function versionCompare(current?: string, target?: string) {
   let result = 1;
-  if (current && target) {
-    if (current === target) {
+  const curVersion = current ? String(current) : "";
+  const tarVersion = target ? String(target) : "";
+  if (curVersion && tarVersion) {
+    if (curVersion === tarVersion) {
       result = 1;
     } else {
-      const currentArray = current.split(".");
-      const targetArray = target.split(".");
+      const currentArray = curVersion.split(".");
+      const targetArray = tarVersion.split(".");
       const currentLength = currentArray.length;
       const targetLength = targetArray.length;
       const maxLength = Math.max(currentLength, targetLength);
