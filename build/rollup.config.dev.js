@@ -6,9 +6,12 @@ export default {
   ...baseConfig,
   plugins: [
     ...baseConfig.plugins,
-    serve(),
+    serve({
+      host: "localhost",
+      port: "10001",
+    }),
     livereload({
-      watch: "lib",
+      watch: "src",
     }),
   ],
 };
