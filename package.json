@@ -1,6 +1,6 @@
 {
   "name": "csx-utils",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "全局方法",
   "main": "lib/index.cjs.js",
   "module": "lib/index.esm.js",
