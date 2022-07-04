@@ -16,6 +16,9 @@
 ### isMiniProgram
 判断是否微信小程序环境
 
+### isType
+判断是否属于类型xxxx
+
 ### isWeChat
 判断是否微信浏览器环境
 
