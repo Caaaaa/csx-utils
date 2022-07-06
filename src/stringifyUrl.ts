@@ -13,7 +13,7 @@ export default function stringifyUrl(
   if (!url) {
     throw new Error("无效的url!");
   }
-  if (isType(querys, "object")) {
+  if (isType(querys, "Object")) {
     search = Object.keys(querys || {})
       .reduce((pre, cur) => {
         let previsous = pre;
@@ -22,11 +22,11 @@ export default function stringifyUrl(
         return previsous;
       }, "")
       .replace(/&$/, "");
-  } else if (isType(querys, "string")) {
+  } else if (isType(querys, "String")) {
     search = querys as string;
   }
 
-  const result = url.indexOf("?") ? `${url}&${search}` : `${url}?${search}`;
+  const result = url.indexOf("?") ? `${url}?${search}` : `${url}&${search}`;
 
   return result;
 }
